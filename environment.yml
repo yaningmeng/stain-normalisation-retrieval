@@ -1,0 +1,30 @@
+name: plism
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      # deep learning / encoders
+      - torch
+      - torchvision
+      - transformers>=4.51
+      - huggingface_hub>=0.30
+      - safetensors
+      # data access
+      - pyarrow>=16
+      - pandas
+      - h5py
+      - pillow
+      # analysis
+      - numpy
+      - scipy
+      - scikit-image
+      - scikit-learn
+      - matplotlib
+      - umap-learn
+      # stain normalisation (Macenko, Vahadane, Reinhard; batched on GPU)
+      - torch-staintools>=1.0.7
+      - kornia
+      # misc
+      - tqdm
