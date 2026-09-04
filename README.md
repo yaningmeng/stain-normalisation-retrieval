@@ -1,6 +1,6 @@
 # Stain Normalisation Does Not Consistently Improve Matched-Location Retrieval with Pathology Foundation Models
 
-Code for the paper accepted at the 7th International Conference on Medical Imaging and Computer-Aided Diagnosis (MICAD 2026), Springer LNEE.
+Code for the paper submitted to the 7th International Conference on Medical Imaging and Computer-Aided Diagnosis (MICAD 2026), Springer LNEE.
 
 **Authors:** Yaning Meng, Binghao Chai, Tapabrata Chakraborti
 
@@ -98,15 +98,3 @@ python scripts/plot_umap.py --feature-dir features/midnight_none --out figures/f
 ## Data
 
 The PLISM dataset is publicly available: [Ochi et al., Scientific Data, 2024](https://doi.org/10.1038/s41597-024-03122-5).
-
-## Citation
-
-```
-@inproceedings{meng2026stain,
-  title={Stain Normalisation Does Not Consistently Improve Matched-Location Retrieval with Pathology Foundation Models},
-  author={Meng, Yaning and Chai, Binghao and Chakraborti, Tapabrata},
-  booktitle={7th International Conference on Medical Imaging and Computer-Aided Diagnosis (MICAD 2026)},
-  year={2026},
-  publisher={Springer}
-}
-```
