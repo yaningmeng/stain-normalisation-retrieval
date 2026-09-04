@@ -14,6 +14,7 @@ This repository contains code for evaluating whether stain normalisation improve
 stain-normalisation-retrieval/
 ├── README.md
 ├── environment.yml                 # Conda environment specification
+├── setup_env.sh                    # Create/update and verify the Conda environment
 ├── plism_index.parquet             # Pre-built shard index for PLISM
 ├── plism_slides.csv                # Slide metadata (stainer, scanner)
 ├── scripts/
@@ -30,19 +31,30 @@ stain-normalisation-retrieval/
 ## Setup
 
 ```bash
-conda env create -f environment.yml
+bash setup_env.sh
 conda activate plism
 ```
+
+Alternatively, create the environment directly with
+`conda env create -f environment.yml`.
 
 ## Usage
 
 ### 1. Download and Tile PLISM
+
+The repository includes the pre-built shard index and slide manifest, so the
+dataset subset can be fetched directly:
 
 ```bash
 python scripts/plism_loader.py fetch \
     --tiles-per-slide 400 \
     --out-dir tiles
 ```
+
+This writes one HDF5 file per slide. Each file contains the RGB tile array,
+the corresponding PLISM tile IDs, and the slide/stainer/scanner metadata. The
+same tile IDs are selected for every slide, preserving the matched-location
+comparisons used by the retrieval analysis.
 
 ### 2. Extract Features
 
